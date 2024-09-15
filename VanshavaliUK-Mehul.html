@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanshavali of Claimant Uday Kumar</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        /* Resize the orgchart boxes */
+        #chart_div table {
+            font-size: 12px; /* Adjusts the font size inside the boxes */
+        }
+
+        #chart_div .google-visualization-orgchart-node {
+            width: 150px; /* Adjust the width of the boxes */
+            height: auto;  /* Make height auto to allow dynamic resizing */
+            padding: 5px;  /* Adds padding for better spacing */
+            text-align: center; /* Centers the text */
+        }
+    </style>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['orgchart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('string', 'Parent');
+            data.addColumn('string', 'ToolTip');
+
+            // Adding family members to the family tree, with custom HTML for nodes
+            data.addRows([
+                // [Name (HTML), Parent, Tooltip]
+                ['Gambheera Thakur', '', ''],
+                ['Ram Bharosh Thakur', 'Gambheera Thakur', ''],
+                ['Rajvanshi Thakur', 'Ram Bharosh Thakur', ''],
+                ['Mahavir Thakur', 'Rajvanshi Thakur', ''],
+                ['Ramphal Thakur', 'Mahavir Thakur', ''],
+                ['Shri Baidyanath Thakur <br><span style="color:blue;">Hissedar Code M-1</span>', 'Ramphal Thakur', ''],
+                ['Shri Jagannath Thakur<br><span style="color:blue;">Hissedar Code M-1</span>', 'Ramphal Thakur', ''],
+                ['Parikshan Thakur<br><span style="color:blue;">Hissedar Code M-2</span>', 'Mahavir Thakur', ''],
+                ['Lalpari Devi<br><span style="color:red;">Dead</span>', 'Parikshan Thakur<br><span style="color:blue;">Hissedar Code M-2</span>', 'Mahavir Thakur',],
+                ['Raghunath Thakur', 'Parikshan Thakur<br><span style="color:blue;">Hissedar Code M-2</span>', 'Mahavir Thakur',],
+                ['Ramjori Devi<br><span style="color:brown;">Sahmati Patr </span>', 'Parikshan Thakur<br><span style="color:blue;">Hissedar Code M-2</span>','Mahavir Thakur',],
+                ['Uday Kumar<br><span style="color:blue;">Claimant M-2</span>', 'Raghunath Thakur', ''],
+                ['Pushpa Kumari<br><span style="color:brown;">Sahmati Patr</span>', 'Raghunath Thakur', ''],
+                ['Rinku Kumari<br><span style="color:brown;">Sahmati Patr </span>', 'Raghunath Thakur', ''],
+
+                ['Ram Swarth Thakur<br><span style="color:blue;">Hissedar Code N-0</span>', 'Nirsan Thakur', ''],
+                ['Nirsan Thakur', 'Rajvanshi Thakur', ''],
+
+                // Adding "Dead and No Child" below names
+                ['Ramdheree Thakur', 'Ram Bharosh Thakur', ''],
+                ['Kirit Thakur<br><span style="color:red;">Dead and No Child</span>', 'Ramdheree Thakur', ''],
+
+                ['Bhagwat Thakur<br><span style="color:blue;">Hissedar Code B-0</span>', 'Rajvanshi Thakur', ''],
+            ]);
+
+            // Create the chart and set options
+            var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+            chart.draw(data,
+            
+            { allowHtml: true });
+        }
+    </script>
+</head>
+<body>
+    <h1>Vanshavali of Claimant Uday Kumar</h1>
+    <div id="chart_div"></div>
+</body>
+</html>
+
